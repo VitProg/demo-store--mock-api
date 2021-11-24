@@ -33,5 +33,18 @@ jobs:
         REMOTE_PORT: '${{ secrets.SERVER_PORT }}'
         REMOTE_USER: '${{ secrets.SERVER_USERNAME }}'
         TARGET: '${{ secrets.SERVER_PATH }}'
-        EXCLUDE: 'dist/'
+        EXCLUDE: 'dist/ node_modules/'
         ARGS: "-rltgoDzvO --delete"
+
+    - name: executing remote ssh commands
+      uses: appleboy/ssh-action@master
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        host: ${{ secrets.SERVER_IP }}
+        port: ${{ secrets.SERVER_PORT }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        script: whoami |
+          cd ${{ secrets.SERVER_PATH }} |
+          npm ci |
+          npm run build:ci |
+          ls -l
