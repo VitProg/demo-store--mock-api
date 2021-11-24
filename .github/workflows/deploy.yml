@@ -45,6 +45,5 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         script: whoami |
           cd ${{ secrets.SERVER_PATH }} |
-          npm ci |
-          npm run build:ci |
-          ls -l
+          ls -l |
+          echo "${{ secrets.SERVER_PATH }}"
