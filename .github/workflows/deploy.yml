@@ -28,10 +28,10 @@ jobs:
     - name: Deploy
       uses: wlixcc/SFTP-Deploy-Action@v1.2.1
       with:
-        username: demo-site
+        username: '${{ secrets.SERVER_USERNAME }}'
         server: '${{ secrets.SERVER_IP }}'
         port: '${{ secrets.SERVER_PORT }}'
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         local_path: './dist/*'
-        remote_path: '/home/site/vitprog/demo-store--mock-api'
+        remote_path: '${{ secrets.SERVER_PATH }}'
         args: '-o ConnectTimeout=5'
