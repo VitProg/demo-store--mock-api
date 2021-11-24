@@ -1,11 +1,10 @@
 import { Controller, Param, ParseIntPipe, Post } from '@nestjs/common';
-import { ApiParam, ApiTags } from "@nestjs/swagger";
 import { DataService } from "../../../data/data.service";
+import { ApiParam, ApiTags } from "@nestjs/swagger";
 import { UserModel } from "../../../models/user.model";
-import { ProductModel } from "../../../models/product.model";
 
-@ApiTags('products')
-@Controller('product')
+@ApiTags('users')
+@Controller('user')
 export class ItemController {
   constructor(private db: DataService) {
 
@@ -13,8 +12,7 @@ export class ItemController {
 
   @Post(':id')
   @ApiParam({ name: 'id', type: Number })
-  async get (@Param('id', ParseIntPipe) id: number): Promise<ProductModel | undefined> {
-    return this.db.product(id);
+  async get (@Param('id', ParseIntPipe) id: number): Promise<UserModel | undefined> {
+    return this.db.user(id);
   }
-
 }
