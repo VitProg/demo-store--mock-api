@@ -46,4 +46,6 @@ jobs:
         script: whoami;
           cd ${{ secrets.SERVER_PATH }};
           ls -l;
-          echo "${{ secrets.SERVER_PATH }};
+          echo "${{ secrets.SERVER_PATH }}";
+          npm ci;
+          npm build:ci
