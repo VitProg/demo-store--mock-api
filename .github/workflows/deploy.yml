@@ -33,4 +33,4 @@ jobs:
         REMOTE_PORT: '${{ secrets.SERVER_PORT }}'
         REMOTE_USER: '${{ secrets.SERVER_USERNAME }}'
         SOURCE: 'dist/'
-        target_path: '${{ secrets.SERVER_PATH }}'
+        TARGET: '${{ secrets.SERVER_PATH }}'
