@@ -16,5 +16,4 @@ export class ItemController {
   async get (@Param('id', ParseIntPipe) id: number): Promise<ProductModel | undefined> {
     return this.db.product(id);
   }
-
 }
