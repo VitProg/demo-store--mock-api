@@ -30,6 +30,7 @@ jobs:
       with:
         username: demo-site
         server: '${{ secrets.SERVER_IP }}'
+        port: '${{ secrets.SERVER_PORT }}'
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         local_path: './dist/*'
         remote_path: '/home/site/vitprog/demo-store--mock-api'
