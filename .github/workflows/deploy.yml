@@ -31,6 +31,6 @@ jobs:
         username: demo-site
         server: '${{ secrets.SERVER_IP }}'
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        local-path: './dist/*'
-        remote-path: /home/site/vitprog/demo-store--mock-api
+        local_path: './dist/*'
+        remote_path: '/home/site/vitprog/demo-store--mock-api'
         args: '-o ConnectTimeout=5'
