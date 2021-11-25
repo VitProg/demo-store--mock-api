@@ -33,8 +33,8 @@ jobs:
         REMOTE_PORT: '${{ secrets.SERVER_PORT }}'
         REMOTE_USER: '${{ secrets.SERVER_USERNAME }}'
         TARGET: '${{ secrets.SERVER_PATH }}'
-        EXCLUDE: '/dist/, /node_modules/'
-        ARGS: "-rltgoDzvO --delete"
+        EXCLUDE: '/dist/, /node_modules/, /.github/'
+        ARGS: "-crltgoDzvO --delete"
 
     - name: executing remote ssh commands
       uses: appleboy/ssh-action@master
