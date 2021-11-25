@@ -1,7 +1,8 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { PaginationDto } from "./pagination.dto";
 
 
-export class ProductListDTO {
+export class ProductListDTO extends PaginationDto {
   @ApiProperty({
     required: false
   })

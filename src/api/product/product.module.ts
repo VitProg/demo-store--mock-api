@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ListController } from './list/list.controller';
-import { ItemController } from './item/item.controller';
+import { ListController } from './list.controller';
+import { ItemController } from './item.controller';
 import { DataModule } from "../../data/data.module";
 
 

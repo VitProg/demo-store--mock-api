@@ -1,8 +1,8 @@
 import { Controller, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { ApiParam, ApiTags } from "@nestjs/swagger";
-import { DataService } from "../../../data/data.service";
-import { UserModel } from "../../../models/user.model";
-import { ProductModel } from "../../../models/product.model";
+import { DataService } from "../../data/data.service";
+import { UserModel } from "../../models/user.model";
+import { ProductModel } from "../../models/product.model";
 
 @ApiTags('products')
 @Controller('product')
