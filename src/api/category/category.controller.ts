@@ -1,18 +1,18 @@
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { CategoryModel } from "../../models/category.model";
 import { DataService } from "../../data/data.service";
 import { ApiTags } from "@nestjs/swagger";
 
 @ApiTags('categories')
-@Controller('categories')
+@Controller('category')
 export class CategoryController {
 
   constructor(private db: DataService) {
 
   }
 
-  @Post()
-  index(): Promise<Array<CategoryModel>> {
+  @Get()
+  list(): Promise<Array<CategoryModel>> {
     return this.db.categories();
   }
 

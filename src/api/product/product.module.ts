@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { ListController } from './list.controller';
-import { ItemController } from './item.controller';
+import { ProductController } from './product.controller';
 import { DataModule } from "../../data/data.module";
 
 
 @Module({
   imports: [DataModule],
-  controllers: [ListController, ItemController]
+  controllers: [ProductController],
 })
 export class ProductModule {
 }
